@@ -43,7 +43,7 @@ export interface LayoutDebugConfig {
     panelBgColor: string;
     panelTextColor: string;
   };
-  spacing: { 
+  spacing: {
     enabled: boolean;
     showFirstLevelOnly?: boolean;
     showHorizontalSpacing?: boolean;

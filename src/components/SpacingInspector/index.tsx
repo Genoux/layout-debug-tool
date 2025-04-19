@@ -317,7 +317,11 @@ const SpacingInspectorComponent = () => {
   const config = useContext(LayoutDebugContext) as LayoutDebugConfig;
   const { isDebugEnabled, features } = useContext(DebugStateContext) as DebugStateContextType;
   const { spacingColor } = config.appearance;
-  const { enabled: spacingConfigEnabled, showFirstLevelOnly = true, showHorizontalSpacing = true } = config.spacing;
+  const {
+    enabled: spacingConfigEnabled,
+    showFirstLevelOnly = true,
+    showHorizontalSpacing = true,
+  } = config.spacing;
 
   const spacingEnabled = isDebugEnabled && features.spacing && spacingConfigEnabled;
 
@@ -412,7 +416,7 @@ const SpacingInspectorComponent = () => {
 
     for (const el of elements) {
       const rect = el.getBoundingClientRect();
-      
+
       // Vertical spacing detection
       const horizontalOverlap = rect.left < targetRect.right && rect.right > targetRect.left;
       if (horizontalOverlap) {
@@ -430,7 +434,7 @@ const SpacingInspectorComponent = () => {
           }
         }
       }
-      
+
       // Horizontal spacing detection
       if (showHorizontalSpacing) {
         const verticalOverlap = rect.top < targetRect.bottom && rect.bottom > targetRect.top;
@@ -507,7 +511,7 @@ const SpacingInspectorComponent = () => {
       parentLeftDistance: parentInfo.leftDistance,
       parentRightDistance: parentInfo.rightDistance,
       padding: getStyleValues(hoveredElement),
-      margin: getMarginValues(hoveredElement)
+      margin: getMarginValues(hoveredElement),
     });
   }, [hoveredElement, spacingEnabled, showHorizontalSpacing, showFirstLevelOnly]);
 

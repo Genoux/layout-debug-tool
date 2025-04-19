@@ -38,10 +38,10 @@ export const DEFAULT_CONFIG: LayoutDebugConfig = {
     panelBgColor: '#1f2937',
     panelTextColor: '#f3f4f6',
   },
-  spacing: { 
+  spacing: {
     enabled: true,
     showFirstLevelOnly: true,
-    showHorizontalSpacing: true
+    showHorizontalSpacing: true,
   },
   elementBorders: {
     enabled: true,

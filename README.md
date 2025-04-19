@@ -1,4 +1,4 @@
-# React Layout Debug Tool
+# Layout Debug Tool
 
 Visual debugging tool for React layouts with breakpoint indicators, grid overlays, spacing inspector, and element borders.
 

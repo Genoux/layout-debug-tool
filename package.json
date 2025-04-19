@@ -1,6 +1,6 @@
 {
   "name": "layout-debug-tool",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React component for debugging layout, grid, breakpoints, and spacing.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -57,10 +57,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnbarry/react-layout-debug-tool.git"
+    "url": "git+https://github.com/genoux/layout-debug-tool.git"
   },
   "bugs": {
-    "url": "https://github.com/johnbarry/react-layout-debug-tool/issues"
+    "url": "https://github.com/genoux/layout-debug-tool/issues"
   },
-  "homepage": "https://github.com/johnbarry/react-layout-debug-tool#readme"
+  "homepage": "https://github.com/genoux/layout-debug-tool#readme"
 }

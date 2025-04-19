@@ -38,7 +38,11 @@ export const DEFAULT_CONFIG: LayoutDebugConfig = {
     panelBgColor: '#1f2937',
     panelTextColor: '#f3f4f6',
   },
-  spacing: { enabled: true },
+  spacing: { 
+    enabled: true,
+    showFirstLevelOnly: true,
+    showHorizontalSpacing: true
+  },
   elementBorders: {
     enabled: true,
     opacity: 0.2,

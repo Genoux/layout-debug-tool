@@ -1,0 +1,66 @@
+{
+  "name": "layout-debug-tool",
+  "version": "1.0.1",
+  "description": "A React component for debugging layout, grid, breakpoints, and spacing.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "dev": "rollup -c -w",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\"",
+    "pack-local": "npm run build && npm pack",
+    "prepare": "npm run build",
+    "publish": "npm run format && npm run build && npm publish"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.18.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [
+    "react",
+    "layout",
+    "debug",
+    "grid",
+    "breakpoints",
+    "spacing",
+    "developer tools"
+  ],
+  "author": "John Barry",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnbarry/react-layout-debug-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johnbarry/react-layout-debug-tool/issues"
+  },
+  "homepage": "https://github.com/johnbarry/react-layout-debug-tool#readme"
+}

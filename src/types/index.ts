@@ -3,6 +3,12 @@ import type * as React from 'react';
 export type LayoutDebugProps = {
   children: React.ReactNode;
   config?: Partial<LayoutDebugConfig>;
+  /**
+   * Force enable/disable the debug tool regardless of environment.
+   * If not provided, the tool will automatically hide in production environments.
+   * @default undefined (auto-detect environment)
+   */
+  forceEnable?: boolean;
 };
 
 export interface Breakpoint {

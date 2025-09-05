@@ -4,6 +4,7 @@ const _unused = React;
 import { LayoutDebugContext } from '@/contexts/LayoutDebugContext';
 import { DebugStateContext } from '@/contexts/DebugStateContext';
 import { useLayoutDebugEngine } from '@/hooks/useLayoutDebugEngine';
+import { shouldEnableDebugTool } from '@/utils/environmentUtils';
 import type { LayoutDebugProps } from '@/types';
 
 import { CurrentBreakpoint } from '@/components/CurrentBreakpoint';
@@ -16,9 +17,10 @@ import { DebugPanel } from '@/components/DebugPanel';
 import { ClientProvider } from '@/components/ClientProvider';
 
 /**
- * Main component that visualizes layout debugging information
+ * Main component that visualizes layout debugging information.
+ * Automatically hides in production environments unless forceEnable is set to true.
  */
-export const LayoutDebugger: React.FC<LayoutDebugProps> = ({ children, config = {} }) => {
+export const LayoutDebugger: React.FC<LayoutDebugProps> = ({ children, config = {}, forceEnable }) => {
   const {
     mergedConfig,
     debugState,
@@ -29,6 +31,14 @@ export const LayoutDebugger: React.FC<LayoutDebugProps> = ({ children, config = 
     constrainedWidth,
     isClient,
   } = useLayoutDebugEngine(config);
+
+  // Check if debug tool should be enabled based on environment
+  const shouldShowDebugTool = shouldEnableDebugTool(forceEnable);
+
+  // Early return if not in development and not force enabled
+  if (!shouldShowDebugTool) {
+    return <>{children}</>;
+  }
 
   if (!isClient) {
     return <>{children}</>;
